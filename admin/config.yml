@@ -1,1 +1,16 @@
+backend:
+  name: git-gateway
+  branch: main
 
+media_folder: "assets/uploads" # Где будут храниться файлы
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "docs"
+    label: "Документация"
+    folder: "."
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Название", name: "title", widget: "string" }
+      - { label: "Контент", name: "body", widget: "markdown" }
